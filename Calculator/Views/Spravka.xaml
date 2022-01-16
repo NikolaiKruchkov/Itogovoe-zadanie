@@ -1,0 +1,36 @@
+﻿<Window x:Class="Calculator.Spravka"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Spravka" Height="600" Width="600" ResizeMode="NoResize">
+    <Grid>
+        <FlowDocumentScrollViewer VerticalScrollBarVisibility="Auto">
+            <FlowDocument ColumnWidth="600">
+                <Paragraph FontSize="24" Foreground="Blue" TextAlignment="Center" FontWeight="Bold">
+                    Как пользоваться калькулятором. Простые функции.
+                </Paragraph>
+                <Paragraph>
+                    При работе с калькулятором надо помнить, что он является программой и соблюдает тот порядок расчетов, который мы ему задаем.
+                </Paragraph>
+                <Paragraph>
+                    Вводить значения можно при помощи мыши или дополнительного блока цифровой клавиатуры (находится с правого края).
+                </Paragraph>
+                <Paragraph>
+                    Он выполняет действия по порядку: 2+2х2 для него всегда равно 8, хотя понятно, что по правилам математики сначала идет умножение, потом сложение и правильный ответ 6.
+                    Подобные действия на данном калькуляторе необходимо выполнять в соответствии с математическими правилами.
+                </Paragraph>
+                <BlockUIContainer>
+                    <Image Source="\\fs-project-lah\03_Technical_Office_Fitout\USER_TO\08. Nikolai Kryuchkov\42. Автоматизация BIM\WPF\Задание 20\Calculator\Calculator\Data\1.png" 
+                           HorizontalAlignment="Center"
+                           Width="300"/>
+                </BlockUIContainer>
+                <Paragraph>
+                    Наш калькулятор самый точный и быстрый! Спасибо, что выбрали нас!
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,94 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator" 
+        xmlns:vm="clr-namespace:Calculator.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600"
+        ResizeMode="NoResize" Background="Azure">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding Path=One}" Key="NumPad1"/>
+        <KeyBinding Command="{Binding Path=Two}" Key="NumPad2"/>
+        <KeyBinding Command="{Binding Path=Three}" Key="NumPad3"/>
+        <KeyBinding Command="{Binding Path=Four}" Key="NumPad4"/>
+        <KeyBinding Command="{Binding Path=Five}" Key="NumPad5"/>
+        <KeyBinding Command="{Binding Path=Six}" Key="NumPad6"/>
+        <KeyBinding Command="{Binding Path=Seven}" Key="NumPad7"/>
+        <KeyBinding Command="{Binding Path=Eight}" Key="NumPad8"/>
+        <KeyBinding Command="{Binding Path=Nine}" Key="NumPad9"/>
+        <KeyBinding Command="{Binding Path=Zero}" Key="NumPad0"/>
+        <KeyBinding Command="{Binding Path=Zapyataya}" Key="Decimal"/>
+        <KeyBinding Command="{Binding Path=Plus}" Key="Add"/>
+        <KeyBinding Command="{Binding Path=Minus}" Key="Subtract"/>
+        <KeyBinding Command="{Binding Path=Umnogit}" Key="Multiply" />
+        <KeyBinding Command="{Binding Path=Razdelit}" Key="Divide" />
+        <KeyBinding Command="{Binding Path=Ravno}" Key="Enter"/>
+        <KeyBinding Command="{Binding Path=Exit}" Modifiers="Ctrl" Key="X"/>
+        <KeyBinding Command="{Binding Path=Copy}" Modifiers="Ctrl" Key="C"/>
+        <KeyBinding Command="{Binding Path=Paste}" Modifiers="Ctrl" Key="V"/>
+        <KeyBinding Command="{Binding Path=Spravka}" Key="F1"/>
+    </Window.InputBindings>
+    <StackPanel>
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Command="{Binding Path=Exit}" InputGestureText="CTRL+X"/>
+            </MenuItem>
+            <MenuItem Header="Правка">
+                <MenuItem Header="Копировать" Command="{Binding Path=Copy}" InputGestureText="CTRL+C"/>
+                <MenuItem Header="Вставить" Command="{Binding Path=Paste}" InputGestureText="CTRL+V"/>
+            </MenuItem>
+        </Menu>
+        <TextBox Height="100" Text="{Binding Path=Znachenie}"/>       
+        <Grid Margin="5" Height="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="%" Command="{Binding Path=Procent}"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="+/-" Command="{Binding Path=PlusMinus}"/>
+            <Button Grid.Column="2" Grid.Row="0" Content="C" Command="{Binding Path=Clear}"/>
+            <Button Grid.Column="3" Grid.Row="0" Content="DEL" Command="{Binding Path=Delete}"/>
+            <Button Grid.Column="4" Grid.Row="0" Content="/" Command="{Binding Path=Razdelit}"/>
+            <Button Grid.Column="5" Grid.Row="0" Content="*" Command="{Binding Path=Umnogit}"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="√" Command="{Binding Path=Qoren}"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="X²" Command="{Binding Path=Qvadrat}"/>
+            <Button Grid.Column="2" Grid.Row="1" Content="7" Command="{Binding Path=Seven}"/>
+            <Button Grid.Column="3" Grid.Row="1" Content="8" Command="{Binding Path=Eight}"/>
+            <Button Grid.Column="4" Grid.Row="1" Content="9" Command="{Binding Path=Nine}"/>
+            <Button Grid.Column="5" Grid.Row="1" Content="-" Command="{Binding Path=Minus}"/>
+            <Button Grid.Column="0" Grid.Row="2" Content="1/X" Command="{Binding Path=Delenie1}"/>
+            <Button Grid.Column="1" Grid.Row="2" Content="x^y" Command="{Binding Path=Stepen}"/>
+            <Button Grid.Column="2" Grid.Row="2" Content="4" Command="{Binding Path=Four}"/>
+            <Button Grid.Column="3" Grid.Row="2" Content="5" Command="{Binding Path=Five}"/>
+            <Button Grid.Column="4" Grid.Row="2" Content="6" Command="{Binding Path=Six}"/>
+            <Button Grid.Column="5" Grid.Row="2" Content="+" Command="{Binding Path=Plus}"/>
+            <Button Grid.Column="0" Grid.Row="3" Content="π" Command="{Binding Path=Pi}"/>
+            <Button Grid.Column="1" Grid.Row="3" Content="2ˣ" Command="{Binding Path=DvaVStepen}"/>
+            <Button Grid.Column="2" Grid.Row="3" Content="1" Command="{Binding Path=One}"/>
+            <Button Grid.Column="3" Grid.Row="3" Content="2" Command="{Binding Path=Two}"/>
+            <Button Grid.Column="4" Grid.Row="3" Content="3" Command="{Binding Path=Three}"/>
+            <Button Grid.Column="5" Grid.Row="3" Grid.RowSpan="2" Content="=" Command="{Binding Path=Ravno}"/>
+            <Button Grid.Column="0" Grid.Row="4" Content="e" Command="{Binding Path=Exponent}"/>
+            <Button Grid.Column="1" Grid.Row="4" Content="eˣ" Command="{Binding Path=ExponentStepen}"/>
+            <Button Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Content="0" Command="{Binding Path=Zero}"/>
+            <Button Grid.Column="4" Grid.Row="4" Content="." Command="{Binding Path=Zapyataya}"/>
+        </Grid>
+        <Label Content="Для вызова справки нажите F1" Height="40"/>        
+    </StackPanel>
+</Window>

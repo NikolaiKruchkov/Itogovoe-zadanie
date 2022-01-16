@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\1.png" />
+    <None Remove="Models\Calculator.cs~RF62b123.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\1.png" />
+  </ItemGroup>
+
+</Project>
